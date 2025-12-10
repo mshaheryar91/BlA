@@ -73,6 +73,12 @@ Pre-localized boundaries: We provide some pre-localized boundaries for easy use.
 
 ---
 ## 📊 Results on the CelebA-HQ dataset showcasing different identities.
+<img width="2807" height="1253" alt="Idsall" src="https://github.com/user-attachments/assets/86f52836-12d2-400f-9e0e-e0ef5811103e" />
+
+-----
+## 📊 Quantitative Results compared with SOTA.
+
+<img width="1209" height="263" alt="image" src="https://github.com/user-attachments/assets/c48da3d2-05fb-4a23-ad54-4eea81371230" />
 
 ---
 ## 📜 Citation
