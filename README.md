@@ -55,22 +55,37 @@ We adopt the linear SVM to search for the black hole on different latent space l
 
 ```bash
 python main.py --bh_boundary --exp ./runs/test \
+    --config celeba.yml \
+    --exp ./runs/test \
+    --edit_attr id \
+    --n_train_img 100 \
+    --n_test_img 100 \
+    --n_iter 5 \
     --t_0 500 \
     --n_inv_step 40 \
-    --n_test_step 40 \
-    --n_iter 2 \
-    --img_path imgs/celeb2.png \
-    --boundary_h 'path/to/target_boundary_h' \
-    --boundary_z 'path/to/target_boundary_z' \
-    --start_distance -100 \
-    --end_distance 100 \
-    --edit_img_number 20
+    --n_train_step 1 \
+    --n_test_step 40
 ```
 Note: To from a good and well-define black hole, we may need to adjust the number of image samples used according to different identites. An indicator for the black hole is the classification accuracy for the test split.
 Pre-localized boundaries: We provide some pre-localized boundaries for easy use.
 
 <img width="3746" height="1106" alt="black_hole_finalday" src="https://github.com/user-attachments/assets/13533344-1803-4515-a95f-9c992e950a20" />
 
+
+## Unlearning
+After forming the black hole, we can now apply unlearning on the denoising trajectory using the boundary and propsoed loss functions.
+
+```bash
+python main.py --bh_unlearn \
+     --t_0 500 \
+     --n_inv_step 40 \
+     --n_test_step 40 \
+     --n_iter 2 \
+     --img_path imgs/celeb2.png \
+     --boundary_h 'path/to/target_boundary_h' \
+     --boundary_z 'path/to/target_boundary_z' \
+     --identity_img 5
+```
 ---
 ## 📊 Results on the CelebA-HQ dataset showcasing different identities.
 <img width="2807" height="1253" alt="Idsall" src="https://github.com/user-attachments/assets/86f52836-12d2-400f-9e0e-e0ef5811103e" />
